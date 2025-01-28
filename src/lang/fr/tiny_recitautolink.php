@@ -1,5 +1,5 @@
 <?php
-$string['pluginname'] = 'RÉCIT Autolink';
+$string['pluginname'] = 'Autolink';
 $string['privacy:metadata'] = 'Ce plugin ne conserve pas de données personnelles.';
 
 $string['course'] = 'Cours';
@@ -50,3 +50,5 @@ $string['border'] = 'Classe Bootstrap';
 $string['progressbarinfo'] = 'La barre de progression mesure le pourcentage des activités visibles complétées possédant un suivi d\'achèvement.';
 $string['displaybyrole'] = 'Afficher selon le(s) rôle(s)';
 $string['displaybyroleinfo'] = 'La visibilité du lien s\'effectue selon le(s) rôle(s) sélectionnée(s).';
+
+?>

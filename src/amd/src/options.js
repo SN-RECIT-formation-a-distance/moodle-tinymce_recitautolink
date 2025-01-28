@@ -16,14 +16,14 @@
 /**
  *
  * @module      tiny_recitautolink/plugin
- * @copyright  2024 RECIT
+ * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
 
 import {getPluginOptionName} from 'editor_tiny/options';
 import {pluginName} from './common';
 
-const predefinedFiltersName = getPluginOptionName(pluginName, 'predefinedfilters');
+const predefinedFiltersName = getPluginOptionName(pluginName, 'courseid');
 
 /**
  * Register the options for the Tiny Filter WS plugin.
@@ -34,8 +34,8 @@ export const register = (editor) => {
     const registerOption = editor.options.register;
 
     registerOption(predefinedFiltersName, {
-        processor: 'array',
-        "default": [],
+        processor: 'raw',
+        "default": 0,
     });
 };
 
@@ -45,4 +45,4 @@ export const register = (editor) => {
  * @param {TinyMCE} editor
  * @returns {object}
  */
-export const getPredefinedFilters = (editor) => editor.options.get(predefinedFiltersName);
+export const getCourseId = (editor) => editor.options.get(predefinedFiltersName);

@@ -16,7 +16,7 @@
 /**
  * This atto plugin allows to generate code for filter autolink and integrate them to your text.
  *
- * @package    atto_recitautolink
+ * @package    tiny_recitautolink
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
@@ -56,19 +56,19 @@ export class AppWebApi extends WebApi
     }
 
     getCmList(cId, onSuccess){
-        this.queryMoodle('atto_recitautolink_get_cm_list', {courseid: parseInt(cId)}, onSuccess);
+        this.queryMoodle('tiny_recitautolink_get_cm_list', {courseid: parseInt(cId)}, onSuccess);
     }
 
     getSectionList(cId, onSuccess){
-        this.queryMoodle('atto_recitautolink_get_section_list', {courseid: parseInt(cId)}, onSuccess);
+        this.queryMoodle('tiny_recitautolink_get_section_list', {courseid: parseInt(cId)}, onSuccess);
     }
 
     getH5PList(cId, onSuccess){
-        this.queryMoodle('atto_recitautolink_get_h5p_list', {courseid: parseInt(cId)}, onSuccess);
+        this.queryMoodle('tiny_recitautolink_get_h5p_list', {courseid: parseInt(cId)}, onSuccess);
     }
 
     getRoleList(cId, onSuccess){
-        this.queryMoodle('atto_recitautolink_get_role_list', {courseid: parseInt(cId)}, onSuccess);
+        this.queryMoodle('tiny_recitautolink_get_role_list', {courseid: parseInt(cId)}, onSuccess);
     }
 
 };

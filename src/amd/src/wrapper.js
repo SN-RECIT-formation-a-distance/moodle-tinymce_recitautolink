@@ -20,22 +20,20 @@
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
 ///import {get_string as getString} from 'core/str';
-import {getFilePicker} from 'editor_tiny/options';
+import {getCourseId} from './options';
 
 export class Editor {
-    globalVars = {editor: null, popup: null, backdrop: null, appReact: null};
 
     open(editor){
-        this.globalVars.editor = editor;
-
+        this.editor = editor;
         var url = M.cfg.wwwroot;
-        var js = url +"/lib/editor/atto/plugins/recitautolink/react/build/index.js";
+        var js = url +"/lib/editor/tiny/plugins/recitautolink/react/build/index.js";
         //var css = url +"/lib/editor/atto/plugins/recitautolink/build/index.css";
-        
+
         var content = document.createElement('div');
         content.setAttribute('id', 'recitautolink_container');
         this.createPopup(content);
-        
+
         if (!document.getElementById('recitautolink')){
             var script = document.createElement('script');
             script.onload = this.loadUi.bind(this);
@@ -52,9 +50,13 @@ export class Editor {
         }
     }
 
-    createPopup(content) {        
+    get(k){
+        return getCourseId(this.editor);
+    }
+
+    createPopup(content) {
         let modal = document.createElement('div');
-        modal.classList.add('modal', 'fade', 'autolink_popup');        
+        modal.classList.add('modal', 'fade', 'autolink_popup');
         modal.setAttribute('style', 'overflow-y: hidden;');
 
         let inner2 = document.createElement('div');
@@ -68,7 +70,7 @@ export class Editor {
 
         let header = document.createElement('div');
         header.classList.add('modal-header');
-        header.innerHTML = "<h2>"+M.util.get_string('pluginname', 'atto_recitautolink')+"</h2>";
+        header.innerHTML = "<h2>"+M.util.get_string('pluginname', 'tiny_recitautolink')+"</h2>";
         inner.appendChild(header);
 
         let btn = document.createElement('button');
@@ -77,46 +79,55 @@ export class Editor {
         btn.setAttribute('data-dismiss', 'modal');
         btn.onclick = this.destroy.bind(this);
         header.appendChild(btn);
-        
+
         let body = document.createElement('div');
         body.classList.add('modal-body');
         inner.appendChild(body);
         body.appendChild(content);
-        
+
         document.body.appendChild(modal);
-        this.globalVars.popup = modal;
+        this.popup = modal;
 
-        this.globalVars.popup.classList.add('show');
+        this.popup.classList.add('show');
 
-        this.globalVars.backdrop = document.createElement('div');
-        this.globalVars.backdrop.classList.add('modal-backdrop', 'fade', 'show');
-        this.globalVars.backdrop.setAttribute('data-backdrop', 'static');
-        document.body.appendChild(this.globalVars.backdrop);
+        this.backdrop = document.createElement('div');
+        this.backdrop.classList.add('modal-backdrop', 'fade', 'show');
+        this.backdrop.setAttribute('data-backdrop', 'static');
+        document.body.appendChild(this.backdrop);
     }
 
     destroy(){
-        this.globalVars.popup.classList.remove('show');
-        this.globalVars.backdrop.classList.remove('show');
-        this.globalVars.popup.remove();
-        this.globalVars.backdrop.remove();
+        this.popup.classList.remove('show');
+        this.backdrop.classList.remove('show');
+        this.popup.remove();
+        this.backdrop.remove();
 
-        if(this.globalVars.appReact){
-            this.globalVars.appReact.unmount();
+        if(this.appReact){
+            this.appReact.unmount();
         }
-    }          
+    }
+
+    appReact = null;
+
+    update(){
+       // $(this.popup).modal('handleUpdate');
+    }
 
     loadUi(){
         if (window.openRecitAutolinkUI){
-            this.globalVars.appReact = window.openRecitAutolinkUI(this);
+            let classHandler = {
+                get: (v) => this.get(v),
+                close: (v) => this.close(v)
+            }
+            this.appReact = window.openRecitAutolinkUI(classHandler);
+            //this.update();
         }
     }
 
     close(code){
         this.destroy();
         if (code){
-            this.globalVars.editor.execCommand('mceFocus');
-            this.globalVars.editor.execCommand('mceInsertContent', false, code);
-            this.globalVars.popup.close();
+            this.editor.execCommand('mceInsertContent', false, code);
         }
     }
 }

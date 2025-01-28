@@ -16,7 +16,7 @@
 /**
  * This atto plugin allows to generate code for filter autolink and integrate them to your text.
  *
- * @package    atto_recitautolink
+ * @package    tiny_recitautolink
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
@@ -48,8 +48,8 @@ export class QRCodeForm extends Component {
         <Form>
             <Form.Group className="mb-3" controlId={"itemactivity1"}>
                 <Form.Label className='d-flex align-items-center'>
-                    <span className='mr-1'>{M.util.get_string('activity', 'atto_recitautolink')}</span> 
-                    <HelpButton icon={faInfoCircle} helpText={<span>{M.util.get_string('resourceaccess', 'atto_recitautolink')}</span>}/>
+                    <span className='mr-1'>{M.util.get_string('activity', 'tiny_recitautolink')}</span> 
+                    <HelpButton icon={faInfoCircle} helpText={<span>{M.util.get_string('resourceaccess', 'tiny_recitautolink')}</span>}/>
                 </Form.Label>
                 <ComboBoxPlus options={this.props.cmList} name='activity' onChange={this.onChange} value={this.state.data.activity}/>
             </Form.Group>
@@ -58,18 +58,18 @@ export class QRCodeForm extends Component {
 
             <Form.Group controlId={"itemactivity3"}>
                 <div className="d-flex align-items-center">
-                    <Form.Check  className="m-1" id={`opening5`} inline type='radio' label={M.util.get_string('qrcode', 'atto_recitautolink')} name='opening' onChange={this.onChange} value='qr'/>
+                    <Form.Check  className="m-1" id={`opening5`} inline type='radio' label={M.util.get_string('qrcode', 'tiny_recitautolink')} name='opening' onChange={this.onChange} value='qr'/>
                 </div>
                 <div className="d-flex align-items-center">
-                    <Form.Check  className="m-1" id={`opening6`} inline type='radio' label={M.util.get_string('qrcode100', 'atto_recitautolink')} name='opening' onChange={this.onChange} value='qr100'/>
+                    <Form.Check  className="m-1" id={`opening6`} inline type='radio' label={M.util.get_string('qrcode100', 'tiny_recitautolink')} name='opening' onChange={this.onChange} value='qr100'/>
                 </div>
             </Form.Group>
            
             <Form.Group ><hr/></Form.Group>
 
             <ButtonGroup className='d-flex'>
-                <Button variant="secondary" onClick={() => this.props.onClose(null)}>{M.util.get_string('cancel', 'atto_recitautolink')}</Button>
-                <Button onClick={this.onInsert}>{M.util.get_string('insert', 'atto_recitautolink')}</Button>
+                <Button variant="secondary" onClick={() => this.props.onClose(null)}>{M.util.get_string('cancel', 'tiny_recitautolink')}</Button>
+                <Button onClick={this.onInsert}>{M.util.get_string('insert', 'tiny_recitautolink')}</Button>
             </ButtonGroup>  
         </Form>;
         

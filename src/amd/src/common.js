@@ -16,7 +16,7 @@
 /**
  *
  * @module      tiny_recitautolink/plugin
- * @copyright  2024 RECIT
+ * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
 

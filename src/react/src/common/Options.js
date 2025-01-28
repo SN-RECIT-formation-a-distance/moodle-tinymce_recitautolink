@@ -16,7 +16,7 @@
 /**
  * This atto plugin allows to generate code for filter autolink and integrate them to your text.
  *
- * @package    atto_recitautolink
+ * @package    tiny_recitautolink
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
@@ -27,7 +27,7 @@ export class AppOptions
     static appVersion(){ return packageJson.version; }
 
     static appTitle(){
-        return M.util.get_string('pluginname', 'atto_recitautolink')+" | " + this.appVersion();
+        return M.util.get_string('pluginname', 'tiny_recitautolink')+" | " + this.appVersion();
     }
 
     static getGateway(){

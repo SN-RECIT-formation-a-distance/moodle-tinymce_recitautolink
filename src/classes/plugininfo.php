@@ -23,10 +23,8 @@ use editor_tiny\plugin_with_buttons;
 use editor_tiny\plugin_with_configuration;
 use editor_tiny\plugin_with_menuitems;
 
-require_once($CFG->dirroot . '/lib/editor/tiny/plugins/recitautolink/lib.php');
-
 /**
- * Tiny htmlbootstrapeditor plugin.
+ * Tiny recitautolink plugin.
  *
  * @package    tiny_recitautolink
  * @copyright  2019 RECIT
@@ -78,11 +76,62 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
 
         global $PAGE;
 
-        $PAGE->requires->strings_for_js(array('pluginname'), 'tiny_recitautolink');
+        $PAGE->requires->strings_for_js(array(
+            'pluginname',
+            'activity',
+            'activities',
+            'generatetestcode',
+            'insert',
+            'cancel',
+            'csspreview',
+            'infoteachernum',
+            'getstarted',
+            'linktext',
+            'invalidcode',
+            'button',
+            'cssclass',
+            'completioncheckbox',
+            'section',
+            'sections',
+            'information',
+            'tests',
+            'testcase',
+            'btnlook',
+            'btnshape',
+            'infobs',
+            'icon',
+            'modal',
+            'modal16x9',
+            'resourceaccess',
+            'sametab',
+            'newtab',
+            'h5p',
+            'course',
+            'fullname',
+            'shortname',
+            'firstname',
+            'lastname',
+            'email',
+            'avatar',
+            'student',
+            'teacher',
+            'progressbar',
+            'allsections',
+            'injection',
+            'injectionresources',
+            'border',
+            'progressbarinfo',
+            'displaybyrole',
+            'displaybyroleinfo',
+            'qrcode',
+            'qrcode100'
+        ),
+    'tiny_recitautolink');
 
-        tiny_recitautolink_strings_for_js();
+    if (!isset($PAGE->course->id) || $PAGE->course->id <= 1) {
+        return array('courseid' => null);
+    }
 
-        return [
-        ];
+    return array('courseid' => $PAGE->course->id);
     }
 }

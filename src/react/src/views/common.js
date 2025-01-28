@@ -16,7 +16,7 @@
 /**
  * This atto plugin allows to generate code for filter autolink and integrate them to your text.
  *
- * @package    atto_recitautolink
+ * @package    tiny_recitautolink
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
@@ -65,7 +65,7 @@ export class GeneratorCode{
 
   	static getActivityCode(data){
 		if(data.activity.length === 0){
-			alert(M.util.get_string('invalidcode', 'atto_recitautolink'));
+			alert(M.util.get_string('invalidcode', 'tiny_recitautolink'));
 			return null;
 		}
 
@@ -103,7 +103,7 @@ export class GeneratorCode{
 
 	  static getQRCode(data){
 		if(data.activity.length === 0){
-			alert(M.util.get_string('invalidcode', 'atto_recitautolink'));
+			alert(M.util.get_string('invalidcode', 'tiny_recitautolink'));
 			return null;
 		}
 
@@ -120,7 +120,7 @@ export class GeneratorCode{
 
 	static getSectionCode(data){
 		if(data.section.length === 0){
-			alert(M.util.get_string('invalidcode', 'atto_recitautolink'));
+			alert(M.util.get_string('invalidcode', 'tiny_recitautolink'));
 			return null;
 		}
 
@@ -139,7 +139,7 @@ export class GeneratorCode{
 	 
 	static getH5PCode(data){
 		if(data.h5p.length === 0){
-			alert(M.util.get_string('invalidcode', 'atto_recitautolink'));
+			alert(M.util.get_string('invalidcode', 'tiny_recitautolink'));
 			return null;
 		}
 
@@ -150,7 +150,7 @@ export class GeneratorCode{
 
 	static getInfoCode(data){
 		if(data.info.length === 0){
-			alert(M.util.get_string('invalidcode', 'atto_recitautolink'));
+			alert(M.util.get_string('invalidcode', 'tiny_recitautolink'));
 			return null;
 		} 
 
@@ -161,7 +161,7 @@ export class GeneratorCode{
 
 	static getInjectionActivityCode(data){
 		if(data.activity.length === 0){
-			alert(M.util.get_string('invalidcode', 'atto_recitautolink'));
+			alert(M.util.get_string('invalidcode', 'tiny_recitautolink'));
 			return null;
 		}
 

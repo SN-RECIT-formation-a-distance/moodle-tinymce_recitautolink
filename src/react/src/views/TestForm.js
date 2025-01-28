@@ -16,7 +16,7 @@
 /**
  * This atto plugin allows to generate code for filter autolink and integrate them to your text.
  *
- * @package    atto_recitautolink
+ * @package    tiny_recitautolink
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
@@ -45,7 +45,7 @@ export class TestForm extends Component {
         let main = 
         <div>
             <Form.Group className="mb-3" >
-                <Form.Text className="text-muted">{M.util.get_string('testcase', 'atto_recitautolink')}</Form.Text>
+                <Form.Text className="text-muted">{M.util.get_string('testcase', 'tiny_recitautolink')}</Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" >
@@ -53,8 +53,8 @@ export class TestForm extends Component {
             </Form.Group>
 
             <ButtonGroup className='d-flex'>
-                <Button variant="secondary" onClick={() => this.props.onClose(null)}>{M.util.get_string('cancel', 'atto_recitautolink')}</Button>
-                <Button onClick={this.onGenerateTestCode}>{M.util.get_string('generatetestcode', 'atto_recitautolink')}</Button>
+                <Button variant="secondary" onClick={() => this.props.onClose(null)}>{M.util.get_string('cancel', 'tiny_recitautolink')}</Button>
+                <Button onClick={this.onGenerateTestCode}>{M.util.get_string('generatetestcode', 'tiny_recitautolink')}</Button>
             </ButtonGroup>  
         </div>;
         
@@ -81,7 +81,7 @@ export class TestForm extends Component {
             return;
         }
 
-        let linktext = ['', M.util.get_string('linktext', 'atto_recitautolink')];
+        let linktext = ['', M.util.get_string('linktext', 'tiny_recitautolink')];
         let opening = ['newtab', 'modal', 'modal16x9']; //, 'qr', 'qr100'
         let otheroptions = ['icon', 'completion'];
         let activitycss = ['', 'btn btn-primary'];
@@ -117,7 +117,7 @@ export class TestForm extends Component {
             return;
         }
 
-        let linktext = ['', M.util.get_string('linktext', 'atto_recitautolink')];
+        let linktext = ['', M.util.get_string('linktext', 'tiny_recitautolink')];
         let sectioncss = ['', 'btn btn-primary'];
 
         let data = Object.assign({}, GeneratorCode.sectionData);

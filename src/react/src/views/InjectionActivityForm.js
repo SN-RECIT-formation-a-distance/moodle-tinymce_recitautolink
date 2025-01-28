@@ -16,7 +16,7 @@
 /**
  * This atto plugin allows to generate code for filter autolink and integrate them to your text.
  *
- * @package    atto_recitautolink
+ * @package    tiny_recitautolink
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
@@ -56,24 +56,24 @@ export class InjectionActivityForm extends Component {
         <Form>
             <Form.Group className="mb-3" controlId={"iteminjectionactivity1"}>
                 <Form.Label className='d-flex align-items-center'>
-                    <span className='mr-1'>{M.util.get_string('activity', 'atto_recitautolink')}</span>
-                    <HelpButton icon={faInfoCircle} helpText={<span>{M.util.get_string('injectionresources', 'atto_recitautolink')}</span>}/>
+                    <span className='mr-1'>{M.util.get_string('activity', 'tiny_recitautolink')}</span>
+                    <HelpButton icon={faInfoCircle} helpText={<span>{M.util.get_string('injectionresources', 'tiny_recitautolink')}</span>}/>
                 </Form.Label>
                 <ComboBoxPlus options={cmListFiltered} name='activity' onChange={this.onChange} value={this.state.data.activity}/>
             </Form.Group>
 
             <Form.Group controlId={"iteminjectionactivity3"}>
                 <div className="d-flex align-items-center">
-                    <Form.Check  className="m-1" id={`openinginjection1`} inline type='radio' label={M.util.get_string('sametab', 'atto_recitautolink')} name='opening' onChange={this.onChange} value='sametab'/>
+                    <Form.Check  className="m-1" id={`openinginjection1`} inline type='radio' label={M.util.get_string('sametab', 'tiny_recitautolink')} name='opening' onChange={this.onChange} value='sametab'/>
                 </div>
                 <div className="d-flex align-items-center">
-                    <Form.Check  className="m-1" id={`openinginjection2`} inline type='radio' label={M.util.get_string('newtab', 'atto_recitautolink')} name='opening' onChange={this.onChange} value='newtab'/>
+                    <Form.Check  className="m-1" id={`openinginjection2`} inline type='radio' label={M.util.get_string('newtab', 'tiny_recitautolink')} name='opening' onChange={this.onChange} value='newtab'/>
                 </div>
                 <div className="d-flex align-items-center">
-                    <Form.Check  className="m-1" id={`openinginjection3`} inline type='radio' label={M.util.get_string('modal', 'atto_recitautolink')} name='opening' onChange={this.onChange} value='modal'/>
+                    <Form.Check  className="m-1" id={`openinginjection3`} inline type='radio' label={M.util.get_string('modal', 'tiny_recitautolink')} name='opening' onChange={this.onChange} value='modal'/>
                 </div>
                 <div className="d-flex align-items-center">
-                    <Form.Check  className="m-1" id={`openinginjection4`} inline type='radio' label={M.util.get_string('modal16x9', 'atto_recitautolink')} name='opening' onChange={this.onChange} value='modal16x9'/>
+                    <Form.Check  className="m-1" id={`openinginjection4`} inline type='radio' label={M.util.get_string('modal16x9', 'tiny_recitautolink')} name='opening' onChange={this.onChange} value='modal16x9'/>
                 </div>
             </Form.Group>
 
@@ -81,25 +81,25 @@ export class InjectionActivityForm extends Component {
 
             <Form.Group controlId={"iteminjectionactivity4"}>
                 <div className='d-flex align-items-center'>
-                    <Form.Check className="m-1" id='injectionactivitybtn' inline type='checkbox' label={M.util.get_string('border', 'atto_recitautolink')} name='activitybtn' onChange={this.onChange} value='border rounded p-2'/>
+                    <Form.Check className="m-1" id='injectionactivitybtn' inline type='checkbox' label={M.util.get_string('border', 'tiny_recitautolink')} name='activitybtn' onChange={this.onChange} value='border rounded p-2'/>
                     <HelpButton helpText={<>
-                            <span>{M.util.get_string('infobs', 'atto_recitautolink')}</span>
+                            <span>{M.util.get_string('infobs', 'tiny_recitautolink')}</span>
                             <br/>
-                            <a href="https://getbootstrap.com/docs/4.6/utilities/borders/#border-radius" target="_blank">{M.util.get_string('btnshape', 'atto_recitautolink')} <i className='p-1 fa fa-info-circle'></i> </a>
+                            <a href="https://getbootstrap.com/docs/4.6/utilities/borders/#border-radius" target="_blank">{M.util.get_string('btnshape', 'tiny_recitautolink')} <i className='p-1 fa fa-info-circle'></i> </a>
                             </>}
                         />
                 </div> 
             </Form.Group>  
             <Form.Group className="mb-3" controlId={"iteminjectionactivity5"}>
-                <Form.Label>{M.util.get_string('cssclass', 'atto_recitautolink')}</Form.Label>
+                <Form.Label>{M.util.get_string('cssclass', 'tiny_recitautolink')}</Form.Label>
                 <Form.Control type="text" name='activitycss' onChange={this.onChange} value={this.state.data.activitycss}/>
             </Form.Group> 
 
             <Form.Group ><hr/></Form.Group>
 
             <ButtonGroup className='d-flex'>
-                <Button variant="secondary" onClick={() => this.props.onClose(null)}>{M.util.get_string('cancel', 'atto_recitautolink')}</Button>
-                <Button onClick={this.onInsert}>{M.util.get_string('insert', 'atto_recitautolink')}</Button>
+                <Button variant="secondary" onClick={() => this.props.onClose(null)}>{M.util.get_string('cancel', 'tiny_recitautolink')}</Button>
+                <Button onClick={this.onInsert}>{M.util.get_string('insert', 'tiny_recitautolink')}</Button>
             </ButtonGroup>  
         </Form>;
         

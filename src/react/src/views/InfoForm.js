@@ -16,7 +16,7 @@
 /**
  * This atto plugin allows to generate code for filter autolink and integrate them to your text.
  *
- * @package    atto_recitautolink
+ * @package    tiny_recitautolink
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
@@ -52,51 +52,51 @@ export class InfoForm extends Component {
         let radioId = 1; 
 
         let sectionListCopy = [...this.props.sectionList];
-        sectionListCopy.unshift({value: 'all', label: `** ${M.util.get_string('allsections', 'atto_recitautolink')} **`});
+        sectionListCopy.unshift({value: 'all', label: `** ${M.util.get_string('allsections', 'tiny_recitautolink')} **`});
         
         let main =  
         <Form>
-            <div className='h6'>{M.util.get_string('progressbar', 'atto_recitautolink')}</div>
+            <div className='h6'>{M.util.get_string('progressbar', 'tiny_recitautolink')}</div>
             <Form.Group className="mb-3" controlId={"itemsection1"} >
                 <Form.Label className='d-flex align-items-center'>
-                    <span className='mr-1'>{M.util.get_string('section', 'atto_recitautolink')}</span> 
-                    <HelpButton icon={faInfoCircle} helpText={<span>{M.util.get_string('progressbarinfo', 'atto_recitautolink')}</span>}/>
+                    <span className='mr-1'>{M.util.get_string('section', 'tiny_recitautolink')}</span> 
+                    <HelpButton icon={faInfoCircle} helpText={<span>{M.util.get_string('progressbarinfo', 'tiny_recitautolink')}</span>}/>
                 </Form.Label>
                 <ComboBoxPlus options={sectionListCopy} name='section' onChange={this.onChange} value={this.state.tmp.section}/>
             </Form.Group>
            
             <Form.Group ><hr/></Form.Group> 
 
-            <div className='h6'>{M.util.get_string('student', 'atto_recitautolink')}</div>
+            <div className='h6'>{M.util.get_string('student', 'tiny_recitautolink')}</div>
             <Form.Group className="mb-3" controlId={"iteminfo1"}>
-                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('firstname', 'atto_recitautolink')} name='info' onChange={this.onChange} value='d/user.firstname'/>
-                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('lastname', 'atto_recitautolink')} name='info' onChange={this.onChange} value='d/user.lastname'/>
-                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('email', 'atto_recitautolink')} name='info' onChange={this.onChange} value='d/user.email'/>
-                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('avatar', 'atto_recitautolink')} name='info' onChange={this.onChange} value='d/user.picture'/>
+                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('firstname', 'tiny_recitautolink')} name='info' onChange={this.onChange} value='d/user.firstname'/>
+                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('lastname', 'tiny_recitautolink')} name='info' onChange={this.onChange} value='d/user.lastname'/>
+                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('email', 'tiny_recitautolink')} name='info' onChange={this.onChange} value='d/user.email'/>
+                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('avatar', 'tiny_recitautolink')} name='info' onChange={this.onChange} value='d/user.picture'/>
             </Form.Group>
 
             <Form.Group ><hr/></Form.Group>
 
-            <div className='h6'>{M.util.get_string('course', 'atto_recitautolink')}</div>
+            <div className='h6'>{M.util.get_string('course', 'tiny_recitautolink')}</div>
             <Form.Group className="mb-3" controlId={"iteminfo2"}>
-                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('fullname', 'atto_recitautolink')} name='info' onChange={this.onChange} value='d/course.fullname'/>
-                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('shortname', 'atto_recitautolink')} name='info' onChange={this.onChange} value='d/course.shortname'/>
+                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('fullname', 'tiny_recitautolink')} name='info' onChange={this.onChange} value='d/course.fullname'/>
+                <Form.Check  className="m-2" id={`info${radioId++}`} inline type='radio' label={M.util.get_string('shortname', 'tiny_recitautolink')} name='info' onChange={this.onChange} value='d/course.shortname'/>
             </Form.Group>
 
             <Form.Group ><hr/></Form.Group>
 
             {[1, 2, 3].map((profId, index) => ( 
                 <div key={index}>
-                    <div className='h6'>{`${M.util.get_string('teacher', 'atto_recitautolink')} #${profId}`}</div>
+                    <div className='h6'>{`${M.util.get_string('teacher', 'tiny_recitautolink')} #${profId}`}</div>
                     <Form.Group className="mb-3" controlId={`iteminfo${index+3}`}>
                         <span className='d-inline-flex'>
-                            <Form.Check  className="m-1" id={`info${radioId++}`} inline type='radio' label={`${M.util.get_string('firstname', 'atto_recitautolink')}`} name='info' onChange={this.onChange} value={`d/teacher${profId}.firstname`}/>
-                            {profId === 1 &&<HelpButton icon={faInfoCircle} helpText={<span>{M.util.get_string('infoteachernum', 'atto_recitautolink')}</span>}/>}
+                            <Form.Check  className="m-1" id={`info${radioId++}`} inline type='radio' label={`${M.util.get_string('firstname', 'tiny_recitautolink')}`} name='info' onChange={this.onChange} value={`d/teacher${profId}.firstname`}/>
+                            {profId === 1 &&<HelpButton icon={faInfoCircle} helpText={<span>{M.util.get_string('infoteachernum', 'tiny_recitautolink')}</span>}/>}
                         </span>
                         
-                        <Form.Check  className="m-1" id={`info${radioId++}`} inline type='radio' label={`${M.util.get_string('lastname', 'atto_recitautolink')}`} name='info' onChange={this.onChange} value={`d/teacher${profId}.lastname`}/>
-                        <Form.Check  className="m-1" id={`info${radioId++}`} inline type='radio' label={`${M.util.get_string('email', 'atto_recitautolink')}`} name='info' onChange={this.onChange} value={`d/teacher${profId}.email`}/>
-                        <Form.Check  className="m-1" id={`info${radioId++}`} inline type='radio' label={`${M.util.get_string('avatar', 'atto_recitautolink')}`} name='info' onChange={this.onChange} value={`d/teacher${profId}.picture`}/>                        
+                        <Form.Check  className="m-1" id={`info${radioId++}`} inline type='radio' label={`${M.util.get_string('lastname', 'tiny_recitautolink')}`} name='info' onChange={this.onChange} value={`d/teacher${profId}.lastname`}/>
+                        <Form.Check  className="m-1" id={`info${radioId++}`} inline type='radio' label={`${M.util.get_string('email', 'tiny_recitautolink')}`} name='info' onChange={this.onChange} value={`d/teacher${profId}.email`}/>
+                        <Form.Check  className="m-1" id={`info${radioId++}`} inline type='radio' label={`${M.util.get_string('avatar', 'tiny_recitautolink')}`} name='info' onChange={this.onChange} value={`d/teacher${profId}.picture`}/>                        
                     </Form.Group>
                 </div>
             ))}
@@ -104,8 +104,8 @@ export class InfoForm extends Component {
             <Form.Group ><hr/></Form.Group>
 
             <ButtonGroup className='d-flex'>
-                <Button variant="secondary" onClick={() => this.props.onClose(null)}>{M.util.get_string('cancel', 'atto_recitautolink')}</Button>
-                <Button onClick={this.onInsert}>{M.util.get_string('insert', 'atto_recitautolink')}</Button>
+                <Button variant="secondary" onClick={() => this.props.onClose(null)}>{M.util.get_string('cancel', 'tiny_recitautolink')}</Button>
+                <Button onClick={this.onInsert}>{M.util.get_string('insert', 'tiny_recitautolink')}</Button>
             </ButtonGroup>  
         </Form>;
         

@@ -16,7 +16,7 @@
 /**
  * This atto plugin allows to generate code for filter autolink and integrate them to your text.
  *
- * @package    atto_recitautolink
+ * @package    tiny_recitautolink
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
@@ -112,25 +112,25 @@ export class MainView extends Component {
         let className = 'p-2';
         let main = 
             <Tabs activeKey={this.state.activeTab} onSelect={this.setTab} className="mb-3" variant="pills">
-                <Tab className={className} title={M.util.get_string('activities', 'atto_recitautolink')} eventKey='activity' style={style}>
+                <Tab className={className} title={M.util.get_string('activities', 'tiny_recitautolink')} eventKey='activity' style={style}>
                     <ActivityForm cmList={this.state.cmList} roleList={this.state.roleList} onClose={this.props.onClose}/>             
                 </Tab>
-                <Tab className={className} title={M.util.get_string('qrcode', 'atto_recitautolink')} eventKey='qrcode' style={style}>
+                <Tab className={className} title={M.util.get_string('qrcode', 'tiny_recitautolink')} eventKey='qrcode' style={style}>
                     <QRCodeForm cmList={this.state.cmList} onClose={this.props.onClose}/>             
                 </Tab>
-                <Tab className={className} title={M.util.get_string('sections', 'atto_recitautolink')} eventKey='sections' style={style}>
+                <Tab className={className} title={M.util.get_string('sections', 'tiny_recitautolink')} eventKey='sections' style={style}>
                     <SectionForm sectionList={this.state.sectionList} onClose={this.props.onClose}/>             
                 </Tab>
-                <Tab className={className} title={M.util.get_string('h5p', 'atto_recitautolink')} eventKey='h5p' style={style}>
+                <Tab className={className} title={M.util.get_string('h5p', 'tiny_recitautolink')} eventKey='h5p' style={style}>
                     <H5PForm h5pList={this.state.h5pList} onClose={this.props.onClose}/>             
                 </Tab>
-                <Tab className={className} title={M.util.get_string('information', 'atto_recitautolink')} eventKey='information' style={style}>
+                <Tab className={className} title={M.util.get_string('information', 'tiny_recitautolink')} eventKey='information' style={style}>
                     <InfoForm sectionList={this.state.sectionList} onClose={this.props.onClose}/>             
                 </Tab>
-                <Tab className={className} title={M.util.get_string('injection', 'atto_recitautolink')} eventKey='injection' style={style}>
+                <Tab className={className} title={M.util.get_string('injection', 'tiny_recitautolink')} eventKey='injection' style={style}>
                     <InjectionActivityForm cmList={this.state.cmList} onClose={this.props.onClose}/>             
                 </Tab>
-                <Tab className={className} title={M.util.get_string('tests', 'atto_recitautolink')} eventKey='tests' style={style}>
+                <Tab className={className} title={M.util.get_string('tests', 'tiny_recitautolink')} eventKey='tests' style={style}>
                     <TestForm cmList={this.state.cmList} sectionList={this.state.sectionList} onClose={this.props.onClose}/>             
                 </Tab>
             </Tabs>;
