@@ -41,7 +41,7 @@ export class TestForm extends Component {
         this.state = {};
     }
 
-    render() {       
+    render() {    
         let main = 
         <div>
             <Form.Group className="mb-3" >
@@ -150,7 +150,7 @@ export class TestForm extends Component {
 
         data.h5p = item.value;
 
-        let intCode = GeneratorCode.getSectionCode(data);
+        let intCode = GeneratorCode.getH5PCode(data);
         result.push(`${intCode} => ${intCode.replace('[[', '').replace(']]', '')}`);
 
         return result.join("<br/><br/>");

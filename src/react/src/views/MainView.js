@@ -131,7 +131,7 @@ export class MainView extends Component {
                     <InjectionActivityForm cmList={this.state.cmList} onClose={this.props.onClose}/>             
                 </Tab>
                 <Tab className={className} title={M.util.get_string('tests', 'tiny_recitautolink')} eventKey='tests' style={style}>
-                    <TestForm cmList={this.state.cmList} sectionList={this.state.sectionList} onClose={this.props.onClose}/>             
+                    <TestForm cmList={this.state.cmList} h5pList={this.state.h5pList} sectionList={this.state.sectionList} onClose={this.props.onClose}/>             
                 </Tab>
             </Tabs>;
         
